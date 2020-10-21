@@ -1,0 +1,51 @@
+body{
+    background-color: #D1EEEA;
+    background-size: 100vm 100vh;
+    margin: 0;
+    font-family: monospace;
+    
+}
+
+h1{
+    color:black;
+    text-align: center;
+    margin:0;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+h2{
+    color:black;
+    text-align: center;
+    margin:0;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+}
+
+
+
+
+button{
+    background: white;
+    color: black;
+    padding: 5px;
+    margin-left: auto;
+    font-size: 15;
+
+
+}
+
+table{
+    width: 50%;
+
+}
+th{
+    width: 10%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-spacing: 0;
+    background: #fff;
+    color: #000;
+}

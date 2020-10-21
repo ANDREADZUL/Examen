@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="icon" type="imagen/png" href="logo.png"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Cuenta Bancaria</title>
+
+    <script>
+        function MostrarDatos(){
+
+            function CuentaBancaria(nombreT,edadT,telefonoT,saldoT){
+                this.nombre = nombreT;
+                this.edad = edadT;
+                this.telefono = telefonoT;
+                this.saldo = saldoT;
+            }
+
+            var NOMBRE = document.getElementById("Nombre").value;
+            var EDAD = document.getElementById("Edad").value;
+            var TELEFONO = document.getElementById("Telefono").value;
+            var SALDO = document.getElementById("Saldo").value;
+            
+            cuenta = new CuentaBancaria(NOMBRE, EDAD, TELEFONO, SALDO);
+
+            agregar();
+        }
+
+        var arreglo = [];
+
+        function agregar(){
+            arreglo.push(cuenta);
+            document.getElementById("tabla").innerHTML +=  '<tbody><td>'+cuenta.nombre+'</td><td>'+cuenta.edad+'</td><td>'+cuenta.telefono+'</td><td>'+cuenta.saldo+'</td></tbody>';
+            
+        };
+
+        function interes(){
+            var bancaria= document.getElementById("Saldo").value;
+            sueldo= parseInt(bancaria);
+
+            if (bancaria > 0){
+               var interes = sueldo * 0.03;
+               var nvoSdo = sueldo + interes;
+               
+            }
+            alert("Tu ahorro con el 3% es de: " + nvoSdo);
+          
+        }
+</script>
+
+    
+</head>
+<body>
+    <section>
+    <h1>cuenta bancaria</h1><br>
+    <p>
+        <h2>Nombre del Titular: <input type="text"  id="Nombre"></h2>
+    </p>
+    <p>
+    <h2>Edad: <input type="text"  id="Edad"></h2>
+    </p>
+    <p>
+    <h2>Télefono: <input type="text"  id="Telefono"></h2>
+    </p>
+    <p>
+    <h2>Saldo: <input type="text"  id="Saldo"> </h2>
+    </p>
+    
+    <button id="boton" class="btn btn-success" type="reset" onclick="MostrarDatos()">Mostrar Datos</button>
+    
+    <button id="boton2" class="btn btn-success" type="reset" onclick="interes()">Generar Interes</button><br>
+</section>
+    
+    <p>
+    <div class="container">
+        <table class="table" id="tabla">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Nombre del Titular</th>
+                    <th>Edad</th>
+                    <th>Telefono</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    </p>
+    
+    
+    
+</body>
+</html>
